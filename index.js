@@ -20,7 +20,7 @@ let produtos = [
         descricao:
             "Esta edição do AJ1 reformula um ícone em estilo de cano baixo. Os materiais premium e a tecnologia Air encapsulada conferem um look novo a um favorito de todos os tempos.",
         preço: "R$ 1225,54",
-        quantidade: "",
+        quantidade: "10",
 
     },
     {
@@ -30,8 +30,7 @@ let produtos = [
         descricao:
             "Esta edição do AJ1 reformula um ícone em estilo de cano baixo. Os materiais premium e a tecnologia Air encapsulada conferem um look novo a um favorito de todos os tempos.",
         preço: "R$ 1555,54",
-        quantidade: "",
-
+        quantidade: "10"
     },
     {
         produtoId: 3,
@@ -40,8 +39,7 @@ let produtos = [
         descricao:
             "Esta edição do AJ1 reformula um ícone em estilo de cano baixo. Os materiais premium e a tecnologia Air encapsulada conferem um look novo a um favorito de todos os tempos.",
         preço: "R$ 2011,54",
-        quantidade: "",
-
+        quantidade: "10"
     },
     {
         produtoId: 4,
@@ -50,8 +48,7 @@ let produtos = [
         descricao:
             "Esta edição do AJ1 reformula um ícone em estilo de cano baixo. Os materiais premium e a tecnologia Air encapsulada conferem um look novo a um favorito de todos os tempos.",
         preço: "R$ 1000,54",
-        quantidade: "",
-
+        quantidade: "10"
     },
     {
         produtoId: 5,
@@ -60,8 +57,7 @@ let produtos = [
         descricao:
             "Esta edição do AJ1 reformula um ícone em estilo de cano baixo. Os materiais premium e a tecnologia Air encapsulada conferem um look novo a um favorito de todos os tempos.",
         preço: "R$ 1555,54",
-        quantidade: "",
-
+        quantidade: "10"
     },
     {
         produtoId: 6,
@@ -70,8 +66,7 @@ let produtos = [
         descricao:
             "Esta edição do AJ1 reformula um ícone em estilo de cano baixo. Os materiais premium e a tecnologia Air encapsulada conferem um look novo a um favorito de todos os tempos.",
         preço: "R$ 1300,54",
-        quantidade: "",
-
+        quantidade: "10"
     }
 ];
 let message = "";
@@ -88,14 +83,14 @@ app.get("/", (req, res) => {
 });
 
 
-app.get("/page3", (req, res) => {
+app.get("/page3/:produtoId", (req, res) => {
     let produtoId = +req.params.produtoId;
     produto = produtos.find((produto) => produto.produtoId === produtoId);
     res.render("page3", { produtos, produto, message });
 });
 
 
-app.get("/delete/:produtoId", (req, res) => {
+app.get("/delete/:produtoId", (req, res) => {                                                                                                               
     message1 = `deseja apagar o produto ?`;
     let produtoId = +req.params.produtoId - 1;
     delete produtos[produtoId];
@@ -127,17 +122,11 @@ app.get("/page6/:produtoId", (req, res) => {
     res.render("page6", { produtos, produto, message,});
 });
 
-app.post("/page6/update/:produtoId", (req, res) => {
-    let produtoId = +req.params.produtoId - 1;
-    const produton = req.body;     
+app.post("/page6/update", (req, res) => {
+    let produtoId = +req.params.produtoId - 1;    
     produto = produtos.find((produto) => produto.produtoId === produtoId);
-    produton.produtoId === +produtoId + 1;
-    produtos[produtoId] = produton;
-    console.clear()
-    console.log(produton)
-    console.log(produtos)
     produto = undefined;
-    message = `produto atualizado com sucesso!!`; --
+    message = `produto atualizado com sucesso!!`; --    
         res.redirect("/#cards",  );
 });
 

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
 
-    <title>PAGE 2</title>
+    <title>atualizar produto</title>
   </head>
   <body>
     <nav>
@@ -34,31 +34,50 @@
     <header>
       <img src="" alt="banner" />
     </header>
-
-    <section id="cadastro" >
+<label for=""></label>
+    <section id="atualizar" >
       <div>
-        <% if (produto==undefined) { %>
+        <% if (produto!=undefined) { %>
         <h2>Cadastre um novo produto!</h2>
 
-        <form action="/create" method="POST">
-          <label for="nome">Nome:</label>
+        <form action="/update" method="POST">
+          <!-- <label for="nome"><%=produto.nome %> </label>
           <input type="text" id="nome" name="nome" />
 
-          <label for="descricao">Descrição:</label>
+          <label for="descricao"><%=produto.descricao %></label>
           <input type="text" id="descricao" name="descricao" />
 
-          <label for="imagem">Link da Imagem</label>
+          <label for="imagem"><%=produto.imagem %></label>
           <input type="text" id="imagem" name="imagem" />
 
-          <label for="preço">preço:</label>
+          <label for="preço"><%=produto.preço %></label>
           <input type="text" id="preço" name="preço" />
 
-          <label for="quantidade">quantidade:</label>
+          <label for="quantidade"><%=produto.quantidade %></label>
           <input type="text" id="quantidade" name="quantidade" />
 
-          <button id="btnCadastrar" type="submit">Cadastrar</button>
+          <button id="btnatualizar" type="submit">atualizar</button>
         </form>
-  
+   -->
+
+
+
+
+   <p class="card"><%= produto.produtoId %></p> <imput> <imput>
+   <img src="<%= produto.imagem %>" alt="" /><label for="quantidade"><%=produto.quantidade %></label>
+   <input  type="text" id="quantidade" name="quantidade" >"dsadas" </imput> 
+   <h3><%= produto.nome %></h3>
+   <p>Preço: <%= produto.preço %></p>
+   <h4>Detalhes : <%= produto.descricao%> </h4>
+   <p>Quantidade: <%= produto.quantidade %></p>
+
+
+
+
+
+
+
+
 
         <% } %>
       </div>

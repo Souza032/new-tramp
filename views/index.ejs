@@ -51,11 +51,10 @@
           <h3><%= produto.nome %></h3>
           <p>Preço: <%= produto.preço %></p>
           <a id ="editar" href="/page6/<%= produto.produtoId %>">EDITAR</a> 
-          <a id="detalhes" href="/page3">DETALHES</a>
-         <button id= "apagar">APAGAR
-          <a href="/delete/<%= produto.produtoId %>"></a>
+          <a id="detalhes" href="/page3/<%= produto.produtoId %>">DETALHES</a>
+         <a id= "apagar" href="/delete/<%= produto.produtoId %>"> APAGAR </a>
 
-         </button>
+    
         </div>
         <% }) %>
       </section>
