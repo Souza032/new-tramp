@@ -1,0 +1,88 @@
+
+
+<!-- pagina para editar o produto  -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>PAGE 2</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><img src="" alt="" /></li>
+        <li>
+          <a href="/">
+            <h1>NEW JORDAN</h1>
+          </a>
+        </li>
+        <li><a href="page4">CADASTRAR TENIS</a></li>
+        <li><a href= 'page3' >DETALHES</a></li>
+        <li><a href="/">HOME</a></li>
+      </ul>
+    </nav>
+    <% if(message != "") { %>
+      <section id="message">
+        <p><%= message %></p>
+        <span id="close">&times;</span>
+      </section>
+      <% } %>
+
+
+      <header>
+        <img src="" alt="banner" />
+      </header>
+      <% if (produto==undefined) { %>
+      
+      <h2>Atualização do produto</h2>
+
+      <form action="/update/<%= produto.produtoIdn %>" method="POST">
+        <label for="nome">Nome:</label>
+        <input
+          type="text"
+          id="nome"
+          name="nome"
+          value="<%= produto.nome %>"
+        />
+
+        <label for="descricao">Descrição:</label>
+        <input
+          type="text"
+          id="descricao"
+          name="descricao"
+          value="<%= produto.descricao %>"
+        />
+
+        <label for="imagem">Link da Imagem</label>
+        <input
+          type="text"
+          id="imagem"
+          name="imagem"
+          value="<%= produto.imagem %>"
+        />
+        <label for="preço">preço:</label>
+        <input
+          type="text"
+          id="preço"
+          name="preço"
+          value="<%= produto.preço %>"
+        />
+        <label for="quantidade">quantidade:</label>
+        <input
+          type="text"
+          id="quantidade"
+          name="quantidade"
+          value="<%= produto.quantidade %>"
+        />
+
+        <button id="btnAtualizar" type="submit">Atualizar</button>
+      </form> %>

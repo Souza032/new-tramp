@@ -1,0 +1,64 @@
+
+<!-- pagina para detalhes  produto  -->
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+
+
+w
+    <title>PAGE 3</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><img src="" alt="" /></li>
+        <li>
+          <a href="/">
+            <h1>NEW JORDAN</h1>
+          </a>
+        </li>
+        <li><a href="page4">CADASTRAR TENIS</a></li>
+        <li><a href= 'page3' >DETALHES</a></li>
+        <li><a href="/">HOME</a></li>
+      </ul>
+    </nav>
+    <% if(message != "") { %>
+      <section id="message">
+        <p><%= message %></p>
+        <span id="close">&times;</span>
+      </section>
+      <% } %>
+
+
+      <header>
+        <img src="" alt="banner" />
+      </header>
+      
+      <main>
+        
+        </section id="hj">
+
+
+          <h2>PRODUTO</h2>
+  
+    
+            <p class="card"><%= produto.produtoId %></p>
+            <img src="<%= produto.imagem %>" alt="" />
+            <h3><%= produto.nome %></h3>
+            <p>Preço: <%= produto.preço %></p>
+            <h4>Detalhes : <%= produto.descricao%> </h4>
+            
+  
+            <a id="editar" href="/page3">DETALHES</a>
+            <a id="apagar" href="/delete/<%= produto.produtoId %>">APAGAR</a>
+          </div>
+       
+        </section>
+
+      </main>

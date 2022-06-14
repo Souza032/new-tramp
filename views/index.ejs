@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+
+    <title>NEW JORDAN</title>
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li><img src="" alt="" /></li>
+        <li>
+          <a href="/">
+            <h1>NEW JORDAN</h1>
+          </a>
+        </li>
+        <li><a href="page4">CADASTRAR TENIS</a></li>
+        <li><a href="/">HOME</a></li>
+      </ul>
+    </nav>
+    <% if(message != "") { %>
+    <section id="message">
+      <p><%= message %></p>
+      <span id="close">&times;</span>
+    </section>
+    <% } %> 
+
+    
+ 
+    <header>
+      <img src="" alt="banner" />
+    </header>
+
+    <main>
+     
+      </section>
+
+      <section id="cards">
+        <button></button>
+        <h2>Lista de produtos</h2>
+
+        <% produtos.forEach((produto)=> { %>
+        <div class="card" >
+        
+          <p class="produtoId"><%= produto.produtoId %></p>
+          <img src="<%= produto.imagem %>" alt="imagem" />
+          <h3><%= produto.nome %></h3>
+          <p>Preço: <%= produto.preço %></p>
+          <a id ="editar" href="/page6/<%= produto.produtoId %>">EDITAR</a> 
+          <a id="detalhes" href="/page3">DETALHES</a>
+         <button id= "apagar">APAGAR
+          <a href="/delete/<%= produto.produtoId %>"></a>
+
+         </button>
+        </div>
+        <% }) %>
+      </section>
+
+
+      <% if (pw == 1) { %>
+          <section id="Smodal">
+            <div class="modalDeConfirmacao">
+           
+              
+                  <h2 >sddads</h2>
+                  <button id="Bmodala">sim </button>
+                  <p id="es"> </p>
+                  <button id="Bmodalb">nao</button>
+              
+              
+              
+              
+                </div>
+              </section>
+              
+    
+              
+             <%  } else { %>
+            
+            
+           
+            <% } %>
+
+
+
+
+
+
+          
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer>
+      <p>
+        Todos os direitos resevados para
+        <a target="_blank" href="https://github.com/Souza032">GUSTAVO SOUZA</a>
+        &copy;
+      </p>
+      <p>
+        Dados retirados de
+        <a target="_blank" href="https://www.produto.com/br/pokedex/"
+          >Pokédex</a
+        >
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+-->
