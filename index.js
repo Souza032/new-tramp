@@ -75,7 +75,7 @@ let produtos = [
     }
 ];
 let message = "";
-let pw = "";
+let pw = ''
 
 let produto = undefined;
 
